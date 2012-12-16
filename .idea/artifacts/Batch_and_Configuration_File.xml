@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact name="Batch and Configuration File">
+    <output-path>$PROJECT_DIR$/out/artifacts/AutoPreview_jar</output-path>
+    <root id="root">
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/autopreview.properties" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/autopreview.bat" />
+    </root>
+  </artifact>
+</component>
