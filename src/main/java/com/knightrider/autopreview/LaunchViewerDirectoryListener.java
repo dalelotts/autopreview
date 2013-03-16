@@ -22,12 +22,13 @@ package com.knightrider.autopreview;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.awt.*;
+import java.awt.Desktop;
 import java.io.IOException;
 import java.nio.file.Path;
 
 /**
- * A DirectoryListener that lauches the default application when a new file is created.
+ * A DirectoryListener that launches the default application when a new file is created.
+ * If, for any reason, the view cannot be launched, the exception is ignored.
  */
 final class LaunchViewerDirectoryListener implements DirectoryListener {
 

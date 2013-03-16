@@ -45,6 +45,7 @@ class DirectoryMonitor {
 	private final Map<WatchKey, Path> keys;
 	private final List<DirectoryListener> listeners = new ArrayList<>();
 	private final WatchService watcher;
+	private boolean active = true;
 
 
 	/**
@@ -77,6 +78,14 @@ class DirectoryMonitor {
 		}
 	}
 
+	public void cancel() {
+		active = false;
+		try {
+			watcher.close();
+		} catch (IOException ignore) {
+			// Ignored
+		}
+	}
 
 	/**
 	 * Notifies all registered listeners that a file has been created.
@@ -92,19 +101,18 @@ class DirectoryMonitor {
 		}
 	}
 
-
 	/**
 	 * Process all events for keys queued to the watcher
 	 */
 
 	void processEvents() {
-		while (true) {
+		while (active) {
 
 			// wait for key to be signalled
 			final WatchKey key;
 			try {
 				key = watcher.take();
-			} catch (InterruptedException ignore) {
+			} catch (Exception ignore) {
 				return;
 			}
 
@@ -144,7 +152,6 @@ class DirectoryMonitor {
 			}
 		}
 	}
-
 
 	/**
 	 * Register the given directory with the WatchService

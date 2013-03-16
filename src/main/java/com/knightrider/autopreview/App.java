@@ -55,7 +55,7 @@ public class App {
 	private static String getMonitoredDirectory() {
 		final Properties properties = new Properties();
 
-		// Look for a -Dconfig property specified at startup, this determins teh location of the config file.
+		// Look for a -Dconfig property specified at startup, this determines the location of the config file.
 		final String config = System.getProperty("config");
 
 		if (config == null) {
