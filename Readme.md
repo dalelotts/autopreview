@@ -1,7 +1,7 @@
 (Eye-Fi) Auto Preview
 --------------
 
-This application was created as a simple project to help me learn about Java 7 NIO.
+This application was created (around the summer of 2010) as a simple project to help me learn about Java 7 NIO.
 
 This is a simple application that monitors a directory and automatically opens the editor for any new files created in that directory.
 
