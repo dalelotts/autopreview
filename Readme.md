@@ -24,7 +24,7 @@ The default value is sub.dir.format=YYYY\\MM\\dd - this means that Eye-Fi upload
 
 Future Enhancements
 -----
-Automatically Detect Eye-Fi upload directory (Currently, you must specify the directory in autopreivew.properties.
+Automatically Detect Eye-Fi upload directory (Currently, you must specify the directory in autopreivew.properties.)
 
 Able to monitor multiple unrelated directories
 
